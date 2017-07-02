@@ -6,7 +6,7 @@
   label: Site
   priority: 1
   type: token
-  action: mkBioMention
+  action: default
   pattern: |
     [word = /(?i)^(alanine|arginine|asparagine|aspartic|aspartate|cysteine|glutamic|glutamate|glutamine|glycine|histidine|isoleucine|leucine|lysine|methionine|phenylalanine|proline|serine|threonine|tryptophan|tyrosine|valine)$/]
     [word = /acid/]?
@@ -18,7 +18,7 @@
   label: Site
   priority: 5
   type: token
-  action: mkBioMention
+  action: default
   pattern: |
     (?<! [word=/(?i)^(table|figure)/]) [word=/(?i)^[ACDEFGHIKLMNQRSTVWY]\d+$/ & !mention=/^(Family|Gene_or_gene_product|Simple_chemical)$/]
   # old alt. pattern /^P\d+$/
@@ -28,7 +28,7 @@
   label: Site
   priority: 5
   type: token
-  action: mkBioMention
+  action: default
   pattern: |
     (?<! [word=/(?i)^(table|figure)/])
     [word=/(?i)^\d+[ACDEFGHIKLMNQRSTVWY]$/ & !mention=/^(Family|Gene_or_gene_product|Simple_chemical)$/]
@@ -39,7 +39,7 @@
   label: Site
   priority: 5
   type: token
-  action: mkBioMention
+  action: default
   pattern: |
     (?<! [word=/(?i)^(table|figure)/]) [word=/(?i)^\d+$/] [word=/^[ACDEFGHIKLMNQRSTVWY]\.?$/]
 
@@ -47,7 +47,7 @@
   label: Site
   priority: 1
   type: token
-  action: mkBioMention
+  action: default
   pattern: |
    [word=/(?i)^(Ala|Arg|Asn|Asp|Cys|Gln|Glu|Gly|His|Ile|Leu|Lys|Met|Phe|Pro|Ser|Thr|Trp|Tyr|Val)\-?\d+$/]
    (?! [lemma=mutant])
@@ -56,7 +56,7 @@
 #  label: Site
 #  priority: 1
 #  type: token
-#  action: mkBioMention
+#  action: default
 #  pattern: |
 #   [word=/(?i)^(Ala|Arg|Asn|Asp|Cys|Gln|Glu|Gly|His|Ile|Leu|Lys|Met|Phe|Pro|Ser|Thr|Trp|Tyr|Val)([-0-9]+)?/]
 #   [word=mutant]?
@@ -65,7 +65,7 @@
   label: Site
   priority: 1
   type: token
-  action: mkBioMention
+  action: default
   pattern: |
    [word=/(?i)^(Ala|Arg|Asn|Asp|Cys|Gln|Glu|Gly|His|Ile|Leu|Lys|Met|Phe|Pro|Ser|Thr|Trp|Tyr|Val)$/]
    [word=/residue/]?
@@ -75,7 +75,7 @@
   label: Site
   priority: 1
   type: token
-  action: mkBioMention
+  action: default
   example: "Under the same conditions, ASPP2 (693-1128) fragment phosphorylated by p38 SAPK had very low levels of incorporated 32P"
   pattern: |
     "("
@@ -87,7 +87,7 @@
 - name: site_domain
   label: Site
   priority: 1
-  action: mkBioMention
+  action: default
   type: token
   pattern: |
     /\(/? /^[A-Z0-9-]+$/ /\)/? /domain/
@@ -96,7 +96,7 @@
 - name: site_known_domain
   label: Site
   priority: 1
-  action: mkBioMention
+  action: default
   type: token
   pattern: |
     "RBD"
@@ -105,7 +105,7 @@
   label: Site
   priority: 1
   type: token
-  action: mkBioMention
+  action: default
   example: "EGF treatment did not affect ROCK1 protein expression level; however, it increased MYPT1 phosphorylation on site 853."
   pattern: |
     (?<= (?<! [mention="Site"]) [word=/(?i)^site$/]) [word=/^\d+$/] [word=/^[ACDEFGHIKLMNQRSTVWY]$/]?
@@ -128,7 +128,7 @@
 
 - name: ner-species
   label: Species
-  action: mkNERMentions
+  action: default
   priority: 3
   type: token
   pattern: |
@@ -136,7 +136,7 @@
 
 - name: ner-cell-lines
   label: CellLine
-  action: mkNERMentions
+  action: default
   priority: 3
   type: token
   pattern: |
@@ -144,7 +144,7 @@
 
 - name: ner-organ
   label: Organ
-  action: mkNERMentions
+  action: default
   priority: 3
   type: token
   pattern: |
@@ -152,7 +152,7 @@
 
 - name: ner-cell-type
   label: CellType
-  action: mkNERMentions
+  action: default
   priority: 3
   type: token
   pattern: |
@@ -160,7 +160,7 @@
 
 - name: ner-tissue-type
   label: TissueType
-  action: mkNERMentions
+  action: default
   priority: 3
   type: token
   pattern: |
@@ -175,7 +175,7 @@
 
 - name: ner-gene_or_gene_product-entities
   label: Gene_or_gene_product
-  action: mkNERMentions
+  action: default
   priority: 3
   type: token
   pattern: |
@@ -197,7 +197,7 @@
 # TODO: verify this ontology
 - name: ner-family-entities
   label: Family
-  action: mkNERMentions
+  action: default
   priority: 3
   type: token
   pattern: |
@@ -210,7 +210,7 @@
 # TODO: verify this ontology
 - name: ner-cellular_component-entities
   label: [Cellular_component]
-  action: mkNERMentions
+  action: default
   priority: 3
   type: token
   pattern: |
@@ -218,7 +218,7 @@
 
 - name: ner-simple_chemical-entities
   label: Simple_chemical
-  action: mkNERMentions
+  action: default
   priority: 3
   type: token
   pattern: |
@@ -226,7 +226,7 @@
 
 - name: ner-domain-entities
   label: Site
-  action: mkNERMentions
+  action: default
   priority: 3
   type: token
   pattern: |
@@ -234,7 +234,7 @@
 
 - name: ner-bioprocess-entities
   label: BioProcess
-  action: mkNERMentions
+  action: default
   example: "apoptosis"
   priority: 3
   type: token
@@ -244,7 +244,7 @@
 # TODO: Ideally, this should somehow be added to the KB
 - name: missing-simple_chemical
   label: Simple_chemical
-  action: mkBioMention
+  action: default
   priority: 4
   type: token
   pattern: |
@@ -253,7 +253,7 @@
 # TODO: What labels should these guys have?
 - name: missing-location
   label: Gene_or_gene_product
-  action: mkBioMention
+  action: default
   priority: 4
   type: token
   pattern: |
@@ -261,7 +261,7 @@
 
 - name: protein-inhibitor
   label: Simple_chemical
-  action: mkBioMention
+  action: default
   priority: 2
   type: token
   pattern: |

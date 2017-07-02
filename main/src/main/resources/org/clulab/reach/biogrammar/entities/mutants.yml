@@ -6,7 +6,7 @@
   label: SubstitutionMutant
   priority: 1
   type: token
-  action: unpackRelations
+  action: default
   example: "K182L"
   keep: false
   pattern: |
@@ -16,7 +16,7 @@
 #  label: SubstitutionMutant
 #  priority: 1
 #  type: token
-#  action: unpackRelations
+#  action: default
 #  example: "P88i" # TODO: Is this a legal mutation name?
 #  keep: false
 #  pattern: |
@@ -26,7 +26,7 @@
   label: SubstitutionMutant
   priority: 1
   type: token
-  action: unpackRelations
+  action: default
   example: "Ser43Val"
   keep: false
   pattern: |
@@ -36,7 +36,7 @@
   label: SubstitutionMutant
   priority: 1
   type: token
-  action: unpackRelations
+  action: default
   example: "91T>Y"
   keep: false
   pattern: |
@@ -46,7 +46,7 @@
   label: DeletionMutant
   priority: 1
   type: token
-  action: unpackRelations
+  action: default
   example: "W34_A36del"
   keep: false
   pattern: |
@@ -56,7 +56,7 @@
   label: DeletionMutant
   priority: 1
   type: token
-  action: unpackRelations
+  action: default
   example: "414delCys"
   keep: false
   pattern: |
@@ -66,7 +66,7 @@
   label: DeletionMutant
   priority: 1
   type: token
-  action: unpackRelations
+  action: default
   example: "DeltaN663"
   keep: false
   pattern: |
@@ -76,7 +76,7 @@
   label: DuplicationMutant
   priority: 1
   type: token
-  action: unpackRelations
+  action: default
   example: "Q18_H33dup"
   keep: false
   pattern: |
@@ -86,7 +86,7 @@
   label: DuplicationMutant
   priority: 1
   type: token
-  action: unpackRelations
+  action: default
   example: "Gly101dup"
   keep: false
   pattern: |
@@ -96,7 +96,7 @@
   label: InsertionMutant
   priority: 1
   type: token
-  action: unpackRelations
+  action: default
   example: "K66_A67insEMYQ"
   keep: false
   pattern: |
@@ -106,7 +106,7 @@
   label: InsertionMutant
   priority: 1
   type: token
-  action: unpackRelations
+  action: default
   example: "Glu66_Tyr67insHis"
   keep: false
   pattern: |
@@ -116,7 +116,7 @@
   label: FrameshiftMutant
   priority: 1
   type: token
-  action: unpackRelations
+  action: default
   example: "S228fs"
   keep: false
   pattern: |
@@ -126,7 +126,7 @@
   label: FrameshiftMutant
   priority: 1
   type: token
-  action: unpackRelations
+  action: default
   example: "Leu81fs"
   keep: false
   pattern: |
@@ -137,7 +137,7 @@
   label: GenericMutant
   example: "ASPP1 mutant"
   priority: 5
-  action: mkBioMention
+  action: default
   type: token
   keep: false
   pattern: |
@@ -147,7 +147,7 @@
   label: GenericMutant
   example: "mutant ASPP1"
   priority: 5
-  action: mkBioMention
+  action: default
   type: token
   keep: false
   pattern: |
@@ -160,7 +160,7 @@
 - name: mutantmod_1a
   label: Mutant
   example: "ASPP1 mutant K111M"
-  action: storeMutants
+  action: default
   priority: 6
   type: token
   pattern: |
@@ -173,7 +173,7 @@
 - name: mutantmod_1b
   label: Mutant
   example: "K111M mutant of ASPP1"
-  action: storeMutants
+  action: default
   priority: 6
   type: token
   pattern: |
@@ -186,7 +186,7 @@
 - name: mutantmod_2
   label: Mutant
   example: "K111M, K112M, and K113M mutants of ASPP1"
-  action: storeMutants
+  action: default
   priority: 6
   type: token
   pattern: |
@@ -199,7 +199,7 @@
 - name: mutantmod_3a
   label: Mutant
   example: "ASPP1 mutants K111M, K112M, and K113M and ASPP2"
-  action: storeMutants
+  action: default
   priority: 6
   type: token
   pattern: |
@@ -210,7 +210,7 @@
 - name: mutantmod_3b
   label: Mutant
   example: "wild-type ASPP1 and the K111M, K112M, and K113M mutants"
-  action: storeMutants
+  action: default
   priority: 6
   type: token
   pattern: |
@@ -222,7 +222,7 @@
 # this grabs all Mutants that it finds within parens
 - name: mutantmod_withparens
   label: Mutant
-  action: storeMutants
+  action: default
   priority: 6
   example: "ERK(T202M Y204E)"
   type: token
@@ -232,7 +232,7 @@
 # this grabs all Mutants that it finds within parens
 - name: mutantmod_withparens2
   label: Mutant
-  action: storeMutants
+  action: default
   priority: 6
   example: "ERK(T202M, Y204E)"
   type: token

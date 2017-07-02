@@ -1,6 +1,6 @@
 - name: phospho_trigger
   label: [Generic_event, Phosphorylation]
-  action: ${ actionFlow }
+  action: default
   priority: ${ priority }
   type: token
   pattern: |
@@ -8,7 +8,7 @@
 
 - name: ubiq_trigger
   label: [Generic_event, Ubiquitination]
-  action: ${ actionFlow }
+  action: default
   priority: ${ priority }
   type: token
   pattern: |
@@ -16,7 +16,7 @@
 
 - name: hydrox_trigger
   label: [Generic_event, Hydroxylation]
-  action: ${ actionFlow }
+  action: default
   priority: ${ priority }
   type: token
   pattern: |
@@ -24,7 +24,7 @@
 
 - name: sumo_trigger
   label: [Generic_event, Sumoylation]
-  action: ${ actionFlow }
+  action: default
   priority: ${ priority }
   type: token
   pattern: |
@@ -32,7 +32,7 @@
 
 - name: glycos_trigger
   label: [Generic_event, Glycosylation]
-  action: ${ actionFlow }
+  action: default
   priority: ${ priority }
   type: token
   pattern: |
@@ -40,7 +40,7 @@
 
 - name: acet_trigger
   label: [Generic_event, Acetylation]
-  action: ${ actionFlow }
+  action: default
   priority: ${ priority }
   type: token
   pattern: |
@@ -48,7 +48,7 @@
 
 - name: farnes_trigger
   label: [Generic_event, Farnesylation]
-  action: ${ actionFlow }
+  action: default
   priority: ${ priority }
   type: token
   pattern: |
@@ -56,7 +56,7 @@
 
 - name: ribos_trigger
   label: [Generic_event, Ribosylation]
-  action: ${ actionFlow }
+  action: default
   priority: ${ priority }
   type: token
   pattern: |
@@ -64,7 +64,7 @@
 
 - name: meth_trigger
   label: [Generic_event, Methylation]
-  action: ${ actionFlow }
+  action: default
   priority: ${ priority }
   type: token
   pattern: |
@@ -72,7 +72,7 @@
 
 - name: hydrolysis_trigger
   label: [Generic_event, Hydrolysis]
-  action: ${ actionFlow }
+  action: default
   priority: ${ priority }
   type: token
   pattern: |
@@ -83,7 +83,7 @@
 
 - name: dephospho_trigger
   label: [Generic_event, Dephosphorylation]
-  action: ${ actionFlow }
+  action: default
   priority: ${ priority }
   type: token
   pattern: |
@@ -91,7 +91,7 @@
 
 - name: deubiq_trigger
   label: [Generic_event, Deubiquitination]
-  action: ${ actionFlow }
+  action: default
   priority: ${ priority }
   type: token
   pattern: |
@@ -99,7 +99,7 @@
 
 - name: dehydrox_trigger
   label: [Generic_event, Dehydroxylation]
-  action: ${ actionFlow }
+  action: default
   priority: ${ priority }
   type: token
   pattern: |
@@ -107,7 +107,7 @@
 
 - name: desumo_trigger
   label: [Generic_event, Desumoylation]
-  action: ${ actionFlow }
+  action: default
   priority: ${ priority }
   type: token
   pattern: |
@@ -115,7 +115,7 @@
 
 - name: deglycos_trigger
   label: [Generic_event, Deglycosylation]
-  action: ${ actionFlow }
+  action: default
   priority: ${ priority }
   type: token
   pattern: |
@@ -123,7 +123,7 @@
 
 - name: deacet_trigger
   label: [Generic_event, Deacetylation]
-  action: ${ actionFlow }
+  action: default
   priority: ${ priority }
   type: token
   pattern: |
@@ -131,7 +131,7 @@
 
 - name: defarnes_trigger
   label: [Generic_event, Defarnesylation]
-  action: ${ actionFlow }
+  action: default
   priority: ${ priority }
   type: token
   pattern: |
@@ -139,7 +139,7 @@
 
 - name: deribos_trigger
   label: [Generic_event, Deribosylation]
-  action: ${ actionFlow }
+  action: default
   priority: ${ priority }
   type: token
   pattern: |
@@ -147,7 +147,7 @@
 
 - name: demeth_trigger
   label: [Generic_event, Demethylation]
-  action: ${ actionFlow }
+  action: default
   priority: ${ priority }
   type: token
   pattern: |
@@ -155,7 +155,7 @@
 
 - name: dehydrolysis_trigger
   label: [Generic_event, Dehydrolysis]
-  action: ${ actionFlow }
+  action: default
   priority: ${ priority }
   type: token
   pattern: |
@@ -166,7 +166,7 @@
 
 - name: translocation_trigger
   label: [Generic_event, Translocation]
-  action: ${ actionFlow }
+  action: default
   priority: ${ priority }
   type: token
   pattern: |
@@ -174,7 +174,7 @@
 
 - name: binding_trigger
   label: [Generic_event, Binding]
-  action: ${ actionFlow }
+  action: default
   priority: ${ priority }
   type: token
   pattern: |

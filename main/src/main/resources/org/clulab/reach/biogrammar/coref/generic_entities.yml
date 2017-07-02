@@ -3,7 +3,7 @@
   label: [Generic_entity, Gene_or_gene_product]
   example: "insertion mutant"
   priority: ${ earlyPriority }
-  action: mkBioMention
+  action: default
   type: token
   pattern: |
     (?<! [mention=Equivalable])
@@ -15,7 +15,7 @@
   label: [Generic_entity, Gene_or_gene_product]
   example: "its substitution mutant"
   priority: ${ earlyPriority }
-  action: mkBioMention
+  action: default
   type: token
   pattern: |
     (?<! [mention=Equivalable])
@@ -28,7 +28,7 @@
 # Words with a DT POS but which are not acting as determiners, e.g. 'this' in "This is an example."
 - name: DT_not_determiner
   label: Generic_entity
-  action: mkBioMention
+  action: default
   priority: ${ priority }
   type: token
   pattern: |
@@ -37,7 +37,7 @@
 # Generic terms for proteins that are not are not part of a larger noun phrase
 - name: Nstar_not_in_Nstar_proteins
   label: [Generic_entity, Gene_or_gene_product]
-  action: mkBioMention
+  action: default
   priority: ${ priority }
   type: token
   pattern: |
@@ -46,7 +46,7 @@
 # Closed-class anaphors
 - name: PRP
   label: Generic_entity
-  action: mkBioMention
+  action: default
   priority: ${ priority }
   type: token
   pattern: |
