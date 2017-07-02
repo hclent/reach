@@ -1,0 +1,376 @@
+taxonomy: org/clulab/reach/biogrammar/taxonomy.yml
+
+vars:
+  # triggers and lookaheads/behinds for regulations and activations
+  auxtriggers: "activ|regul"
+  posTriggers: "acceler|accept|activat|aid|allow|augment|cataly|caus|contribut|direct|driv|elev|elicit|enabl|enhanc|increas|induc|initi|interconvert|lead|led|mediat|modul|necess|overexpress|potenti|produc|prolong|promot|rais|reactivat|re-express|rescu|restor|retent|signal|stimul|support|synerg|synthes|target|trigger|underli|up-regul|upregul"
+  negTriggers: "attenu|abolish|abrog|antagon|arrest|attenu|block|deactiv|decreas|degrad|deplet|deregul|diminish|disrupt|down-reg|downreg|dysregul|elimin|impair|imped|inactiv|inhibit|knockdown|limit|loss|lower|negat|nullifi|perturb|prevent|reduc|reliev|repress|resist|restrict|revers|sequester|shutdown|slow|starv|suppress|supress"
+
+rules:
+  - import: org/clulab/reach/biogrammar/entities/entities.yml
+  - import: org/clulab/reach/biogrammar/entities/mutants.yml
+#  - import: org/clulab/reach/biogrammar/events/bind_events.yml
+#    vars:
+#      priority: "7"
+
+  - import: org/clulab/reach/biogrammar/events/transcription_events.yml
+    vars:
+      priority: "7"
+
+  - import: org/clulab/reach/biogrammar/events/decrease_events.yml
+    vars:
+      triggerLemma: "loss"
+      priority: "7"
+
+  - import: org/clulab/reach/biogrammar/events/amount_events.yml
+    vars:
+      triggerLemma: "amount|level|quantity"
+      priority: "7"
+
+  - import: org/clulab/reach/biogrammar/events/hydrolysis_events.yml
+    vars:
+      priority: "7"
+
+  - import: org/clulab/reach/biogrammar/events/dehydrolysis_events.yml
+    vars:
+      priority: "7"
+
+  - import: org/clulab/reach/biogrammar/events/translocation_events.yml
+    vars:
+      priority: "7"
+
+  ###############################################################################
+  #
+  # Simple events
+  #
+  ###############################################################################
+
+  # Phosphorylations
+  - import: org/clulab/reach/biogrammar/events/simple-event_template.yml
+    vars:
+      eventName: "Phosphorylation"
+      actionFlow: "mkBioMention"
+      label: "Phosphorylation"
+      verbalTriggerLemma: "phosphorylate"
+      nominalTriggerLemma: "phosphorylation"
+      triggerPrefix: "!word=/(?i)^(de|auto)/"
+      priority: "7"
+
+  # AutoPhosphorylations
+  - import: org/clulab/reach/biogrammar/events/simple-event-auto_template.yml
+    vars:
+      eventName: "AutoPhosphorylation"
+      actionFlow: "handleAutoEvent"
+      label: "AutoPhosphorylation"
+      verbalTriggerLemma: "auto-?phosphorylate"
+      baseVerbalTriggerLemma: "phosphorylate"
+      nominalTriggerLemma: "auto-?phosphorylation"
+      triggerPrefix: "!word=/(?i)^de/"
+      priority: "7"
+
+  # Ubiquitination
+  - import: org/clulab/reach/biogrammar/events/simple-event_template.yml
+    vars:
+      eventName: "Ubiquitination"
+      actionFlow: "mkUbiquitination"
+      label: "Ubiquitination"
+      verbalTriggerLemma: "ubiquit(in|yl)ate"
+      nominalTriggerLemma: "ubiquit(in|yl)ation"
+      triggerPrefix: "!word=/(?i)^de/"
+      priority: "7"
+
+  # Hydroxylation
+  - import: org/clulab/reach/biogrammar/events/simple-event_template.yml
+    vars:
+      eventName: "Hydroxylation"
+      actionFlow: "mkBioMention"
+      label: "Hydroxylation"
+      verbalTriggerLemma: "hydroxylate"
+      nominalTriggerLemma: "hydroxylation"
+      triggerPrefix: "!word=/(?i)^de/"
+      priority: "7"
+
+  # Sumoylation
+  - import: org/clulab/reach/biogrammar/events/simple-event_template.yml
+    vars:
+      eventName: "Sumoylation"
+      actionFlow: "mkBioMention"
+      label: "Sumoylation"
+      verbalTriggerLemma: "sumoylate"
+      nominalTriggerLemma: "sumoylation"
+      triggerPrefix: "!word=/(?i)^de/"
+      priority: "7"
+
+  # Glycosylation
+  - import: org/clulab/reach/biogrammar/events/simple-event_template.yml
+    vars:
+      eventName: "Glycosylation"
+      actionFlow: "mkBioMention"
+      label: "Glycosylation"
+      verbalTriggerLemma: "glycosylate"
+      nominalTriggerLemma: "glycosylation"
+      triggerPrefix: "!word=/(?i)^de/"
+      priority: "7"
+
+  # Acetylation
+  - import: org/clulab/reach/biogrammar/events/simple-event_template.yml
+    vars:
+      eventName: "Acetylation"
+      actionFlow: "mkBioMention"
+      label: "Acetylation"
+      verbalTriggerLemma: "acetylate"
+      nominalTriggerLemma: "acetylation"
+      triggerPrefix: "!word=/(?i)^de/"
+      priority: "7"
+
+  # Farnesylation
+  - import: org/clulab/reach/biogrammar/events/simple-event_template.yml
+    vars:
+      eventName: "Farnesylation"
+      actionFlow: "mkBioMention"
+      label: "Farnesylation"
+      verbalTriggerLemma: "farnesylate"
+      nominalTriggerLemma: "farnesylation"
+      triggerPrefix: "!word=/(?i)^de/"
+      priority: "7"
+
+  # Ribosylation
+  - import: org/clulab/reach/biogrammar/events/simple-event_template.yml
+    vars:
+      eventName: "Ribosylation"
+      actionFlow: "mkBioMention"
+      label: "Ribosylation"
+      verbalTriggerLemma: "ribosylate"
+      nominalTriggerLemma: "ribosylation"
+      triggerPrefix: "!word=/(?i)^de/"
+      priority: "7"
+
+  # Methylation
+  - import: org/clulab/reach/biogrammar/events/simple-event_template.yml
+    vars:
+      eventName: "Methylation"
+      actionFlow: "mkBioMention"
+      label: "Methylation"
+      verbalTriggerLemma: "methylate"
+      nominalTriggerLemma: "methylation"
+      triggerPrefix: "!word=/(?i)^de/"
+      priority: "7"
+
+
+  #
+  # "Reverse" Simple Events:
+  #
+
+  # Dephosphorylations
+  - import: org/clulab/reach/biogrammar/events/simple-event_template.yml
+    vars:
+      eventName: "Dephosphorylation"
+      actionFlow: "mkBioMention"
+      label: "Dephosphorylation"
+      verbalTriggerLemma: "de-?phosphorylate"
+      nominalTriggerLemma: "de-?phosphorylation"
+      triggerPrefix: "word=/(?i)^de/"
+      priority: "7"
+
+  # Deubiquitination
+  - import: org/clulab/reach/biogrammar/events/simple-event_template.yml
+    vars:
+      eventName: "Deubiquitination"
+      actionFlow: "mkUbiquitination"
+      label: "Deubiquitination"
+      verbalTriggerLemma: "de-?ubiquit(in|yl)ate"
+      nominalTriggerLemma: "de-?ubiquit(in|yl)ation"
+      triggerPrefix: "word=/(?i)^de/"
+      priority: "7"
+
+  # Dehydroxylation
+  - import: org/clulab/reach/biogrammar/events/simple-event_template.yml
+    vars:
+      eventName: "Dehydroxylation"
+      actionFlow: "mkBioMention"
+      label: "Dehydroxylation"
+      verbalTriggerLemma: "de-?hydroxylate"
+      nominalTriggerLemma: "de-?hydroxylation"
+      triggerPrefix: "word=/(?i)^de/"
+      priority: "7"
+
+  # Desumoylation
+  - import: org/clulab/reach/biogrammar/events/simple-event_template.yml
+    vars:
+      eventName: "Desumoylation"
+      actionFlow: "mkBioMention"
+      label: "Desumoylation"
+      verbalTriggerLemma: "de-?sumoylate"
+      nominalTriggerLemma: "de-?sumoylation"
+      triggerPrefix: "word=/(?i)^de/"
+      priority: "7"
+
+  # Deglycosylation
+  - import: org/clulab/reach/biogrammar/events/simple-event_template.yml
+    vars:
+      eventName: "Deglycosylation"
+      actionFlow: "mkBioMention"
+      label: "Deglycosylation"
+      verbalTriggerLemma: "de-?glycosylate"
+      nominalTriggerLemma: "de-?glycosylation"
+      triggerPrefix: "word=/(?i)^de/"
+      priority: "7"
+
+  # Deacetylation
+  - import: org/clulab/reach/biogrammar/events/simple-event_template.yml
+    vars:
+      eventName: "Deacetylation"
+      actionFlow: "mkBioMention"
+      label: "Deacetylation"
+      verbalTriggerLemma: "de-?acetylate"
+      nominalTriggerLemma: "de-?acetylation"
+      triggerPrefix: "word=/(?i)^de/"
+      priority: "7"
+
+  # Defarnesylation
+  - import: org/clulab/reach/biogrammar/events/simple-event_template.yml
+    vars:
+      eventName: "Defarnesylation"
+      actionFlow: "mkBioMention"
+      label: "Defarnesylation"
+      verbalTriggerLemma: "de-?farnesylate"
+      nominalTriggerLemma: "de-?farnesylation"
+      triggerPrefix: "word=/(?i)^de/"
+      priority: "7"
+
+  # Deribosylation
+  - import: org/clulab/reach/biogrammar/events/simple-event_template.yml
+    vars:
+      eventName: "Deribosylation"
+      actionFlow: "mkBioMention"
+      label: "Deribosylation"
+      verbalTriggerLemma: "de-?ribosylate"
+      nominalTriggerLemma: "de-?ribosylation"
+      triggerPrefix: "word=/(?i)^de/"
+      priority: "7"
+
+  # Demethylation
+  - import: org/clulab/reach/biogrammar/events/simple-event_template.yml
+    vars:
+      eventName: "Demethylation"
+      actionFlow: "mkBioMention"
+      label: "Demethylation"
+      verbalTriggerLemma: "de-?methylate"
+      nominalTriggerLemma: "de-?methylation"
+      triggerPrefix: "word=/(?i)^de/"
+      priority: "7"
+
+
+  # Generic (incomplete) events
+  - import: org/clulab/reach/biogrammar/coref/generic_events.yml
+    vars:
+      actionFlow: "mkBioMention"
+      priority: "8"
+
+  ###############################################################################
+  #
+  # Nested events
+  #
+  ###############################################################################
+
+  # A very specific class of "early" regulations: "Y-induced Z" (where Z is an event)
+  # These must be recognized first, so the nested event in "X activates Y-induced Z" works
+  - import: org/clulab/reach/biogrammar/events/early-pos-reg_template.yml
+    vars:
+      label: "Positive_regulation"
+      ruleType: "regulation"
+      triggers: "induced|mediated"
+      actionFlow: "mkRegulation"
+      priority: "9" # must be priority of regulations - 1!
+      controlledType: "SimpleEvent"
+      controllerType: "BioEntity"
+
+  # A very specific class of "early" activations: "Y-induced Z" (where Z is an entity)
+  # These must be recognized first, so the nested event in "X activates Y-induced Z" works
+  - import: org/clulab/reach/biogrammar/events/early-pos-reg_template.yml
+    vars:
+      label: "Positive_activation"
+      ruleType: "activation"
+      triggers: "induced|mediated"
+      actionFlow: "mkActivation"
+      priority: "10" # must be priority of regulations - 1!
+      controlledType: "BioEntity"
+      controllerType: "BioEntity"
+
+
+  # Positive Regulation
+  - import: org/clulab/reach/biogrammar/events/pos-reg_template.yml
+    vars:
+      label: "Positive_regulation"
+      ruleType: "regulation"
+      triggers: ${posTriggers}
+      actionFlow: "mkRegulation"
+      priority: "12-13"
+      controlledType: "Event"
+      controllerType: "PossibleController"
+
+  # Positive regulation, from patterns that apply ONLY to regulations
+  - import: org/clulab/reach/biogrammar/events/pos-reg-only_template.yml
+    vars:
+      label: "Positive_regulation"
+      ruleType: "regulation"
+      triggers: ${posTriggers}
+      actionFlow: "mkRegulation"
+      priority: "12-13"
+      controlledType: "Event"
+      controllerType: "PossibleController"
+
+  # Negative Regulation
+  - import: org/clulab/reach/biogrammar/events/neg-reg_template.yml
+    vars:
+      label: "Negative_regulation"
+      ruleType: "regulation"
+      triggers: ${negTriggers}
+      actionFlow: "mkRegulation"
+      priority: "12-13"
+      controlledType: "Event"
+      controllerType: "PossibleController"
+
+  # Negative Regulation, from patterns that apply ONLY to regulations
+  - import: org/clulab/reach/biogrammar/events/neg-reg-only_template.yml
+    vars:
+      label: "Negative_regulation"
+      ruleType: "regulation"
+      triggers: ${negTriggers}
+      actionFlow: "mkRegulation"
+      priority: "12-13"
+      controlledType: "Event"
+      controllerType: "PossibleController"
+
+  # Positive Activation
+  - import: org/clulab/reach/biogrammar/events/pos-reg_template.yml
+    vars:
+      label: "Positive_activation"
+      ruleType: "activation"
+      triggers: ${posTriggers}
+      actionFlow: "mkActivation"
+      priority: "14" # must be 1 + priority of regulations!
+      controlledType: "BioEntity"
+      controllerType: "PossibleController"
+
+  # Positive Activation, from patterns that apply ONLY to activations
+  - import: org/clulab/reach/biogrammar/events/pos-act-only_template.yml
+    vars:
+      label: "Positive_activation"
+      ruleType: "activation"
+      triggers: ${posTriggers}
+      actionFlow: "mkActivation"
+      priority: "14" # must be 1 + priority of regulations!
+      controlledType: "BioEntity"
+      controllerType: "PossibleController"
+
+  # Negative Activation
+  - import: org/clulab/reach/biogrammar/events/neg-reg_template.yml
+    vars:
+      label: "Negative_activation"
+      ruleType: "activation"
+      triggers: ${negTriggers}
+      actionFlow: "mkActivation"
+      priority: "14" # must be 1 + priority of regulations!
+      controlledType: "BioEntity"
+      controllerType: "PossibleController"
