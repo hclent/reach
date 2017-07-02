@@ -1,7 +1,7 @@
 - name: alias_${ aLabel }-${ bLabel }_paren1_nil
   example: "Ras (H-Ras, K-Ras, N-Ras)"
   label: Alias
-  action: mkBioMention
+  action: default
   priority: ${ priority }
   type: token
   pattern: |
@@ -14,7 +14,7 @@
 - name: alias_${ aLabel }-${ bLabel }_paren2_referredto
   example: "Ras (also referred to as H-Ras, K-Ras, or N-Ras)"
   label: Alias
-  action: mkBioMention
+  action: default
   priority: ${ priority }
   type: token
   pattern: |
@@ -30,7 +30,7 @@
 - name: alias_${ aLabel }-${ bLabel }_paren3_knownas
   example: "Ras (also known as H-Ras, K-Ras, N-Ras)"
   label: Alias
-  action: mkBioMention
+  action: default
   priority: ${ priority }
   type: token
   pattern: |
@@ -46,7 +46,7 @@
 - name: alias_${ aLabel }-${ bLabel }_paren4_called
   example: "Ras (commonly called H-Ras, K-Ras or N-Ras)"
   label: Alias
-  action: mkBioMention
+  action: default
   priority: ${ priority }
   type: token
   pattern: |
@@ -62,7 +62,7 @@
 - name: alias_${ aLabel }-${ bLabel }_paren5_alias
   example: "Ras (a.k.a. H-Ras/K-Ras/N-Ras)"
   label: Alias
-  action: mkBioMention
+  action: default
   priority: ${ priority }
   type: token
   pattern: |
@@ -76,7 +76,7 @@
 - name: alias_${ aLabel }-${ bLabel }_comma1_referredto
   example: "Ras, which is typically referred to as H-Ras, K-Ras, or N-Ras,"
   label: Alias
-  action: mkBioMention
+  action: default
   priority: ${ priority }
   type: token
   pattern: |
@@ -92,7 +92,7 @@
 - name: alias_${ aLabel }-${ bLabel }_comma2_knownas
   example: "Ras, usually designated H-Ras, K-Ras, or N-Ras,"
   label: Alias
-  action: mkBioMention
+  action: default
   priority: ${ priority }
   type: token
   pattern: |
@@ -108,7 +108,7 @@
 - name: alias_${ aLabel }-${ bLabel }_comma2_called
   example: "Ras, sometimes termed H-Ras, K-Ras, or N-Ras,"
   label: Alias
-  action: mkBioMention
+  action: default
   priority: ${ priority }
   type: token
   pattern: |
@@ -124,7 +124,7 @@
 - name: alias_${ aLabel }-${ bLabel }_homolog
   example: "We studied the effects of the Pax6 homologs eyeless and eyegone."
   label: Alias
-  action: mkBioMention
+  action: default
   priority: ${ priority }
   type: token
   pattern: |
@@ -136,7 +136,7 @@
 - name: alias_${ aLabel }-${ bLabel }_homolog2
   example: "Eyeless, a homolog of Pax6, is the subject of this work."
   label: Alias
-  action: mkBioMention
+  action: default
   priority: ${ priority }
   type: token
   pattern: |
