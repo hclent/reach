@@ -4,7 +4,7 @@
 # TODO (ms): remove "associate" from binding1* rules; maybe Ok, given the stronger syntactic connections?
 - name: binding1a
   label: Binding
-  action: mkBinding
+  action: default
   priority: ${ priority }
   pattern: |
     trigger = [lemma=/bind|associate|ligate/ & tag=/^V/ & !outgoing=/prep_(to|with)|dobj|acomp/]
@@ -12,7 +12,7 @@
 
 - name: binding1b
   label: Binding
-  action: mkBinding
+  action: default
   priority: ${ priority }
   pattern: |
     trigger = [lemma=/bind|associate|ligate/ & tag=/^V/]
@@ -21,7 +21,7 @@
 
 - name: binding1forms
   label: Binding
-  action: mkBinding
+  action: default
   priority: ${ priority }
   pattern: |
     trigger = /form(ed|s)?/ (a)? /complex(es)?|dimers?|heteromultimers?/
@@ -30,7 +30,7 @@
 
 - name: binding2
   label: Binding
-  action: mkBinding
+  action: default
   priority: ${ priority }
   pattern: |
     trigger = binding (?! [lemma="site"])
@@ -39,7 +39,7 @@
 
 - name: binding3
   label: Binding
-  action: mkBinding
+  action: default
   priority: ${ priority }
   pattern: |
     trigger = [word=/(?i)binding|dimerization|heterodimerization|recruitment/] (?! [lemma="site"])
@@ -48,7 +48,7 @@
 
 - name: binding_of_and
   label: Binding
-  action: mkBinding
+  action: default
   type: token
   priority: ${ priority }
   pattern: |
@@ -59,7 +59,7 @@
 
 - name: binding5
   label: Binding
-  action: mkBinding
+  action: default
   priority: ${ priority }
   pattern: |
       trigger = [word=/(?i)binding|dimerization|heterodimerization|recruitment|interaction/] (?! [lemma="site"])
@@ -70,7 +70,7 @@
 # ms: removed "associate" from this rule; too ambiguous
 - name: binding6
   label: Binding
-  action: mkBinding
+  action: default
   priority: ${ priority }
   pattern: |
       trigger = [lemma=/bind|interact|ligate/ & tag=/^V/]
@@ -79,7 +79,7 @@
 
 - name: binding7a
   label: Binding
-  action: mkBinding
+  action: default
   priority: ${ priority }
   pattern: |
       trigger = [word=/(?i)binding|dimerization|heterodimerization|recruitment|interaction/] (?! [lemma="site"])
@@ -88,7 +88,7 @@
 
 - name: binding7b
   label: Binding
-  action: mkBinding
+  action: default
   priority: ${ priority }
   pattern: |
       trigger = [word=/(?i)binding|dimerization|heterodimerization|recruitment|interaction/] (?! [lemma="site" | lemma=to])
@@ -97,7 +97,7 @@
 
 - name: binding7c
   label: Binding
-  action: mkBinding
+  action: default
   priority: ${ priority }
   pattern: |
       trigger = [word=/(?i)binding|dimerization|heterodimerization|recruitment|interaction/] (?! [lemma="site"])
@@ -106,7 +106,7 @@
 
 - name: binding9
   label: Binding
-  action: mkBinding
+  action: default
   priority: ${ priority }
   pattern: |
       trigger = interaction
@@ -116,7 +116,7 @@
 # ms: remove "associate" and "interact" from binding10* rules; too ambiguous
 - name: binding10
   label: Binding
-  action: mkBinding
+  action: default
   priority: ${ priority }
   pattern: |
       trigger = [lemma=/bind|ligate/ & tag=/^V/]
@@ -124,7 +124,7 @@
 
 - name: binding10b
   label: Binding
-  action: mkBinding
+  action: default
   priority: ${ priority }
   pattern: |
       trigger = [lemma=/bind|ligate/ & tag=/^V/]
@@ -133,7 +133,7 @@
 
 - name: binding11
   label: Binding
-  action: mkBinding
+  action: default
   priority: ${ priority }
   pattern: |
       trigger = /cooperation|affinity|association|interaction/
@@ -143,7 +143,7 @@
 ## "We analyze the associations between KRAS and BRAF mutations and patients' clinicopathological characteristics."
 #- name: binding11_token
 #  label: Binding
-#  action: mkBinding
+#  action: default
 #  priority: ${ priority }
 #  type: token
 #  pattern: |
@@ -156,7 +156,7 @@
 
 - name: binding12
   label: Binding
-  action: mkBinding
+  action: default
   priority: ${ priority }
   pattern: |
       trigger = formation (?= of /complex|rings/) #dummy: prep_of [word=/complex|rings/]
@@ -164,7 +164,7 @@
 
 - name: binding13
   label: Binding
-  action: mkBinding
+  action: default
   priority: ${ priority }
   pattern: |
       trigger = /interact(s|ed)?/
@@ -173,7 +173,7 @@
 
 - name: binding14
   label: Binding
-  action: mkBinding
+  action: default
   priority: ${ priority }
   pattern: |
       trigger = /interactions?/
@@ -181,7 +181,7 @@
 
 - name: binding_16
   label: Binding
-  action: mkBinding
+  action: default
   priority: ${ priority }
   pattern: |
     trigger = [word=/ligate(s|d)?/ & tag=/^V/]
@@ -192,7 +192,7 @@
 - name: binding_17
   example: "A is bound with B"
   label: Binding
-  action: mkBinding
+  action: default
   priority: ${ priority }
   pattern: |
     trigger = [lemma=/bind|ligate/ & tag=/^V/]
@@ -201,7 +201,7 @@
 
 - name: binding_18
   label: Binding
-  action: mkBinding
+  action: default
   priority: ${ priority }
   pattern: |
     trigger = binding (?! [lemma="site"])
@@ -210,7 +210,7 @@
 
 - name: binding_19
   label: Binding
-  action: mkBinding
+  action: default
   priority: ${ priority }
   pattern: |
     trigger = [word=/(?i)binding|dimerization|heterodimerization|recruitment|interaction/] partner
@@ -219,7 +219,7 @@
 
 - name: binding_20
   label: Binding
-  action: mkBinding
+  action: default
   priority: ${ priority }
   pattern: |
     trigger = [word=/(?i)binding|dimerization|heterodimerization|recruitment|interaction/] (?! [lemma="site"])
@@ -227,7 +227,7 @@
 
 - name: binding_21
   label: Binding
-  action: mkBinding
+  action: default
   priority: ${ priority }
   pattern: |
     trigger = oligomerization (?! [lemma="site"])
@@ -237,7 +237,7 @@
 #- name: binding_22
 #  example: "A is target of B"
 #  label: Binding
-#  action: mkBinding
+#  action: default
 #  priority: ${ priority }
 #  pattern: |
 #    trigger = [lemma=target & tag=/^N/] (?! [lemma="site"])
@@ -247,7 +247,7 @@
 - name: binding_syntax_23_verb
   example: "RBD of PI3KC2β binds nucleotide-free Ra"
   label: Binding
-  action: mkBinding
+  action: default
   priority: ${ priority }
   pattern: |
     trigger = [lemma="bind" & tag=/^V/]
@@ -259,7 +259,7 @@
 - name: binding_syntax_24_noun
   example: "Even more than Ras, ASPP2 is common, as is their binding to Mek."
   label: Binding
-  action: mkBinding
+  action: default
   priority: ${ priority }
   pattern: |
     trigger = [word=/(?i)binding|dimerization|heterodimerization|recruitment|interaction/] (?! [lemma="site"])
@@ -269,7 +269,7 @@
 - name: binding_syntax_25_verb
   example: "IKKgamma appears capable of binding linear polyubiquitin."
   label: Binding
-  action: mkBinding
+  action: default
   priority: ${ priority }
   pattern: |
     trigger = [word=binding & tag=VBG] (?! [lemma="site"])
@@ -279,7 +279,7 @@
 - name: binding_syntax_26_verb
   example: "Only Smad3LC and Smad3C exhibited the ability to bind APC10."
   label: Binding
-  action: mkBinding
+  action: default
   priority: ${ priority }
   pattern: |
     trigger = [word=bind & tag=VB]
@@ -289,7 +289,7 @@
 - name: binding_syntax_27_verb
   example: "Only Smad3LC and Smad3C were able to bind APC10."
   label: Binding
-  action: mkBinding
+  action: default
   priority: ${ priority }
   pattern: |
     trigger = [word=bind & tag=VB]
@@ -300,7 +300,7 @@
 # when the prep_to is (wrongly) attached to increased instead of binding
 - name: binding_token_1
   label: Binding
-  action: mkBinding
+  action: default
   priority: ${ priority }
   type: token
   pattern: |
@@ -310,7 +310,7 @@
 
 #- name: binding_token_2
 #  label: Binding
-#  action: mkBinding
+#  action: default
 #  priority: ${ priority }
 #  type: token
 #  pattern: |
@@ -318,7 +318,7 @@
 
 - name: binding_token_3
   label: Binding
-  action: mkBinding
+  action: default
   priority: ${ priority }
   type: token
   pattern: |
@@ -329,7 +329,7 @@
 # Prepositional Nominalization
 - name: binding_token_4
   label: Binding
-  action: mkBinding
+  action: default
   priority: ${ priority }
   type: token
   pattern: |
@@ -348,7 +348,7 @@
 
 - name: binding_coexist
   label: Binding
-  action: mkBinding
+  action: default
   priority: ${ priority }
   example: "To confirm whether XRCC1 and DNA-PK coexist in a common complex..."
   pattern: |
@@ -357,7 +357,7 @@
 
 - name: binding_oncebound
   label: Binding
-  action: mkBinding
+  action: default
   priority: ${ priority }
   type: token
   example: "Once bound to the DSB, the DNA-PK holoenzyme facilitates the recruitment of MEK."
@@ -366,7 +366,7 @@
 
 - name: binding_thatisbound
   label: Binding
-  action: mkBinding
+  action: default
   priority: ${ priority }
   example: "Src tyrosyl phosphorylates Ras that is GTP bound"
   pattern: |
@@ -377,7 +377,7 @@
 - name: binding_thatisbound_surface
   label: Binding
   type: token
-  action: mkBinding
+  action: default
   priority: ${ priority }
   example: "Src tyrosyl phosphorylates Ras that is GTP bound"
   pattern: |
@@ -386,7 +386,7 @@
 # rules for "Complex formation"
 - name: binding_complex_formation_1
   label: Binding
-  action: mkBinding
+  action: default
   priority: ${priority}
   # sentence from PMC534114
   example: "These responses are mediated by complex formation between p85, the regulatory subunit of PI-3 kinase, and three canonical tyrosine phosphorylation sites on Gab1."
@@ -398,7 +398,7 @@
 # Token pattern rule for [complex/heterodimer A and B] is
 - name: binding_complex_A_B
   label: Binding
-  action: mkBinding
+  action: default
   priority: ${ priority }
   type: token
   pattern: |
@@ -408,7 +408,7 @@
 
 - name: binding_activity
   label: Binding
-  action: mkBinding
+  action: default
   priority: ${ priority }
   pattern: |
     trigger = binding activity
@@ -418,7 +418,7 @@
 - name: complex_formation
   label: Binding 
   example: "Complex formation between Gab1 and the protein tyrosine phosphatase Shp2 negatively regulates something."
-  action: mkBinding
+  action: default
   priority: ${ priority }
   pattern: |
     trigger = /(?i)complex/ formation

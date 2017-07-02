@@ -5,7 +5,7 @@
 
 - name: Ubiquitination_syntax_1_verb
   priority: 4
-  action: mkUbiquitination 
+  action: default 
   example: ""
   label: [Ubiquitination, SimpleEvent, Event, PossibleController]
   pattern: |
@@ -17,7 +17,7 @@
 
 - name: Ubiquitination_syntax_2_verb
   priority: 4
-  #action: mkUbiquitination
+  #action: default
   example: ""
   label: [Ubiquitination, SimpleEvent, Event, PossibleController]
   pattern: |
@@ -28,7 +28,7 @@
 
 - name: Ubiquitination_syntax_3_verb
   priority: 4
-  action: mkUbiquitination
+  action: default
   example: ""
   label: [Ubiquitination, SimpleEvent, Event, PossibleController]
   pattern: |
@@ -40,7 +40,7 @@
 
 - name: Ubiquitination_syntax_4_verb
   priority: 4
-  action: mkUbiquitination
+  action: default
   example: ""
   label: [Ubiquitination, SimpleEvent, Event, PossibleController]
   pattern: |
@@ -52,7 +52,7 @@
 
 - name: Ubiquitination_syntax_5_verb
   priority: 4
-  action: mkUbiquitination
+  action: default
   example: ""
   label: [Ubiquitination, SimpleEvent, Event, PossibleController]
   pattern: |
@@ -64,7 +64,7 @@
 
 - name: Ubiquitination_syntax_6_verb
   priority: 4
-  action: mkUbiquitination
+  action: default
   example: ""
   label: [Ubiquitination, SimpleEvent, Event, PossibleController]
   pattern: |
@@ -76,7 +76,7 @@
 
 - name: Ubiquitination_syntax_1_noun
   priority: 4
-  action: mkUbiquitination
+  action: default
   example: ""
   label: [Ubiquitination, SimpleEvent, Event, PossibleController]
   pattern: |
@@ -89,7 +89,7 @@
 
 - name: Ubiquitination_syntax_2_noun
   priority: 4
-  action: mkUbiquitination
+  action: default
   example: ""
   label: [Ubiquitination, SimpleEvent, Event, PossibleController]
   pattern: |
@@ -101,7 +101,7 @@
 
 - name: Ubiquitination_syntax_3_noun
   priority: 4
-  action: mkUbiquitination
+  action: default
   example: ""
   label: [Ubiquitination, SimpleEvent, Event, PossibleController]
   pattern: |
@@ -113,7 +113,7 @@
 
 - name: Ubiquitination_syntax_4_noun
   priority: 4
-  action: mkUbiquitination
+  action: default
   example: ""
   label: [Ubiquitination, SimpleEvent, Event, PossibleController]
   pattern: |
@@ -123,7 +123,7 @@
 
 - name: Ubiquitination_syntax_5_noun
   priority: 4
-  action: mkUbiquitination
+  action: default
   example: ""
   label: [Ubiquitination, SimpleEvent, Event, PossibleController]
   pattern: |
@@ -133,7 +133,7 @@
 
 - name: Ubiquitination_syntax_6_noun
   priority: 4
-  action: mkUbiquitination
+  action: default
   example: ""
   label: [Ubiquitination, SimpleEvent, Event, PossibleController]
   pattern: |
@@ -143,7 +143,7 @@
 
 - name: Ubiquitination_syntax_7_noun
   priority: 4
-  action: mkUbiquitination
+  action: default
   example: "Here we show that monoubiquitination decreases the sensitivity of Ras to GAP-mediated hydrolysis."
   label: [Ubiquitination, SimpleEvent, Event, PossibleController]
   pattern: |
@@ -153,7 +153,7 @@
 
 - name: Ubiquitination_token_1_noun
   priority: 4
-  action: mkUbiquitination
+  action: default
   example: ""
   type: token
   label: [Ubiquitination, SimpleEvent, Event, PossibleController]
@@ -163,7 +163,7 @@
 
 - name: Ubiquitination_token_2_noun
   priority: 4
-  action: mkUbiquitination
+  action: default
   example: ""
   type: token
   label: [Ubiquitination, SimpleEvent, Event, PossibleController]
@@ -173,7 +173,7 @@
 # Only partially works (because of odin bug?)
 - name: Ubiquitination_token_3_noun
   priority: 4
-  action: mkUbiquitination
+  action: default
   example: "Experiments revealed ubiquitination at Lys residues 104, 103, and 147 of K-Ras."
   type: token
   label: [Ubiquitination, SimpleEvent, Event, PossibleController]
@@ -184,7 +184,7 @@
 
 - name: Ubiquitination_token_1_verb
   priority: 4
-  action: mkUbiquitination
+  action: default
   example: ""
   type: token
   label: [Ubiquitination, SimpleEvent, Event, PossibleController]
@@ -194,7 +194,7 @@
 
 - name: Ubiquitination_token_2_verb
   priority: 4
-  action: mkUbiquitination
+  action: default
   example: ""
   type: token
   label: [Ubiquitination, SimpleEvent, Event, PossibleController]

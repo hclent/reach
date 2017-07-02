@@ -13,7 +13,7 @@
   priority: ${ priority }
   example: "X activates Y"
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [word=/(?i)^(${ triggers })/ & !word=/^cataly/ & tag=/^V|RB/] [lemma=/^(${ auxtriggers })/ & tag=/^V/]?
     controlled:${ controlledType } = prepc_by? (/dobj|xcomp|ccomp/ [!lemma=/resistance|sensitivity/])
@@ -25,7 +25,7 @@
   priority: ${ priority }
   example: "X positively regulates Y"
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [lemma=/^positive/] [lemma="regulate" & !tag=/^JJ/] # moved "constraint: advmod [word=/^positive/]" here
     controlled:${ controlledType } = dobj /nn|amod/{,2}
@@ -37,7 +37,7 @@
   priority: ${ priority }
   example: "X promotes pathway by Y"
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [word=/(?i)^(${ triggers })/ & tag=/^V|RB/] the? [lemma=/pathway/ & tag=/^N/]
     controlled:${ controlledType } = prep_by /conj|dep|dobj|cc|nn|prep_of|prep_in$|amod/{,2}
@@ -48,7 +48,7 @@
 - name: Positive_${ ruleType }_syntax_2_verb
   priority: ${ priority }
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [word=/(?i)^(${ triggers })/ & tag=/VBD|VBN|RB/] [lemma=/^(${ auxtriggers })/ & tag=/^V/]?
     controlled:${ controlledType } = (>/^nsubj/|<vmod) /conj_|nn|cc|dep|amod/{,2}
@@ -59,7 +59,7 @@
   priority: ${ priority }
   example: ""
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [word=/(?i)^(${ triggers })/ & !outgoing=nsubjpass & tag=/^V|RB/] [lemma=/^(${ auxtriggers })/ & tag=/^V/]?
     controlled:${ controlledType } = ( (/pobj|prep_[^b]|conj_|nn|amod/{,2}) | (< /pobj|prep_|conj_|nn|amod/{1,2}) )
@@ -70,7 +70,7 @@
   priority: ${ priority }
   example: ""
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [word=/(?i)^(${ triggers })/ & tag=/^V|RB/] [lemma=/^(${ auxtriggers })/ & tag=/^V/]?
     controlled:${ controlledType } = (nsubjpass /conj_|nn|amod/{,2})
@@ -81,7 +81,7 @@
   priority: ${ priority }
   example: ""
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [word=/(?i)^(${ triggers })/ & tag=/^V|RB/] [lemma=/^(${ auxtriggers })/ & tag=/^V/]?
     controlled:${ controlledType } = dobj /nn|amod|conj_|cc/{,2}
@@ -92,7 +92,7 @@
   priority: ${ priority }
   example: ""
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [word=/(?i)^(${ triggers })/ & tag=/VBN|RB/] [lemma=/^(${ auxtriggers })/ & tag=/^VBN/]?
     controlled:${ controlledType } = (< /xcomp|rcmod|appos/){1,2} /appos|nn|amod|conj_|cc/{,2}
@@ -103,7 +103,7 @@
   priority: ${ priority }
   example: "ASPP1 aids in the translocation of Kras to the membrane."
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [word=/(?i)^(${ triggers })/] # "aids" is incorrectly tagged as a noun
     controlled:${ controlledType } = prep_in$ | prep_to
@@ -114,7 +114,7 @@
   priority: ${ priority }
   example: "We found that prolonged expression of active Ras resulted in up-regulation of the MKP3 gene"
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [lemma=result] in [word=/(?i)^(${ triggers })/]
     controlled:${ controlledType } = prep_of nn?
@@ -125,7 +125,7 @@
   priority: ${ priority }
   example: ""
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [word=/(?i)^(${ triggers })/ & tag=/^N/] [lemma=/^(${ auxtriggers })/]?
     controlled:${ controlledType } = /prep_of|prep_in$/ /nn|amod|conj_|cc/{,2}
@@ -136,7 +136,7 @@
   priority: ${ priority }
   example: ""
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [word=/(?i)^(${ triggers })/ & tag=/^N/] [lemma=/^(${ auxtriggers })/ & tag=/^N/]?
     controlled:${ controlledType } = /prep_of|prep_in$/? /conj_|cc|nn|amod/{1,2}
@@ -147,7 +147,7 @@
   priority: ${ priority }
   example: ""
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [word=/(?i)^(${ triggers })/ & tag=/^N/ & !outgoing=prep_by] [lemma=/^(${ auxtriggers })/ & tag=/^N/]? (?! downstream)
     controlled:${ controlledType } = /prep_of|prep_in$/ /conj_|cc|nn|amod/{,2}
@@ -158,7 +158,7 @@
   priority: ${ priority }
   example: ""
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [word=/(?i)^(${ triggers })/ & tag=/^N/] [lemma=/^(${ auxtriggers })/ & tag=/^N/]?
     controlled:${ controlledType } = < /nn|amod/ > /prep_/ /conj_|cc|nn|amod/{,2}
@@ -169,7 +169,7 @@
   priority: ${ priority }
   example: ""
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [word=/(?i)^(${ triggers })/ & tag=/^N/] [lemma=/^(${ auxtriggers })/ & tag=/^N/]?
     controlled:${ controlledType } = (/prep_of|prep_in$/ /nn|amod|conj_|cc/{,2}){1,2}
@@ -180,7 +180,7 @@
   priority: ${ priority }
   example: "Rapamycin, an activator of the mTOR kinase,"
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [word=/(?i)^(${ triggers })/ & tag=/^N/] [lemma=/^(${ auxtriggers })/ & tag=/^N/]?
     controller:${ controllerType } = <dep /nn|amod|conj_|cc/{,2}
@@ -192,7 +192,7 @@
   priority: ${ priority }
   example: "HDAC activators including trichostatin A"
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [word=/(?i)^(${ triggers })/ & tag=/^N/] [lemma=/^(${ auxtriggers })/ & tag=/^N/]?
     controlled:${ controlledType } = /conj_|cc|nn|amod/{,2}
@@ -203,7 +203,7 @@
   priority: ${ priority }
   example: "A is an activator of B"
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [lemma=/be/ & tag=/^V/] []? []? [lemma=/${ triggers }/ & tag=/^N/]
     controller:${ controllerType } = nsubj
@@ -214,7 +214,7 @@
   priority: ${ priority }
   example: "ASPP1 is common, as is its activation by ASPP2."
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [lemma=/${ triggers }/ & tag=/^N/]
     controller:${ controllerType } = /prep_by|agent/
@@ -226,7 +226,7 @@
   type: token
   label: ${ label }
   example: "monoubiquitinated K-Ras is less sensitive than the unmodified protein to GAP-mediated GTP hydrolysis"
-  action: ${ actionFlow }
+  action: default
   pattern: |
     @controller:${ controllerType } (?<trigger> [word=/(?i)^(${ triggers })/ & !tag=/^JJ/]) @controlled:${ controlledType }
 
@@ -235,7 +235,7 @@
   type: token
   label: ${ label }
   example: "Interacting proteins that facilitate FGFR3 mediated STAT1 activation could exist in cells."
-  action: ${ actionFlow }
+  action: default
   pattern: |
     @controller:${ controllerType } (?<trigger> [word=/(?i)^(mediat)/ & !tag=/^JJ/]) @controlled:${ controlledType } /(?i)^(activation)/
 
@@ -245,7 +245,7 @@
   example: "mTOR activator Rapamycin"
   type: token
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     @controlled:${ controlledType } (?<trigger> [word=/(?i)^(${ triggers })/ & tag=/^NN/]) @controller:${ controllerType }
 
@@ -256,7 +256,7 @@
   example: "Activation of mTOR by rapamycin has been standard treatment "
   type: token
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     (?<trigger> [word=/(?i)^(${ triggers })/ & tag=/^NN/]) of @controlled:${ controlledType } by @controller:${ controllerType } (?! [lemma=/${ negTriggers }/ ])
 
@@ -268,7 +268,7 @@
   example: "Cells were additionally stimulated with 10 ng/ml leptin and cell extracts analyzed for ErbB3 tyrosine phosphorylation."
   type: token
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     # passive verb ("stimulated" in the example)
     (?<trigger> [word=/(?i)^(${ triggers })/ & tag=VBN])
@@ -288,7 +288,7 @@
 #  priority: ${ priority }
 #  example: "These results imply that Ack1 mediated Ras phosphorylation results in subsequent AKT activation."
 #  label: ${ label }
-#  action: ${ actionFlow }
+#  action: default
 #  pattern: |
 #    trigger = [lemma=result] in # TODO: expand lemma pattern for trigger
 #    # xcomp for "A, resulting in B" pattern
@@ -300,7 +300,7 @@
   priority: ${ priority }
   example: "We also demonstrate that tyrosine phosphorylation of ErbB3 may lead to recruitment and activation of PI-3 kinase."
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     # TODO: expand lemma pattern for trigger
     trigger = [lemma=lead] to

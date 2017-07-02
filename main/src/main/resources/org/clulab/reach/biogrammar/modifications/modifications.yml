@@ -13,7 +13,7 @@ rules:
   label: ModificationTrigger
   priority: 1
   type: token
-  action: mkBioMention
+  action: default
   pattern: |
     # note the use of nested lookaheads, muahaha!
     [!lemma=/^(un|non)/ & lemma=/${modTriggerWords}/ & !outgoing=/prep_by|agent|vmod|nsubj/ & tag=/^(JJ|VBN)/] (?= @BioChemicalEntity (?! [lemma=/^(fragment|protein)/]? [lemma="by"] @BioChemicalEntity))
@@ -21,7 +21,7 @@ rules:
 - name: modification_trigger_2
   label: ModificationTrigger
   priority: 1
-  action: mkBioMention
+  action: default
   type: token
   pattern: |
     (^[!lemma=/^(un|non)/ & lemma=/${modTriggerWords}/ & !outgoing=/prep_by|agent/ & tag=/^NN/]) (?! [lemma="by"] @BioChemicalEntity)
@@ -30,7 +30,7 @@ rules:
 #  label: ModificationTrigger
 #  priority: 1
 #  type: token
-#  action: mkBioMention
+#  action: default
 #  pattern: |
 #    (?<= [mention="BioChemicalEntity"] (when | if) (it | they)) [lemma="be"]) [!lemma=/^(un|non)/ & lemma=/${modTriggerWords}/ & !outgoing=/prep_by|agent/ & tag=/^(JJ|VBN)/] (?! [lemma="by"] @BioChemicalEntity)
 #
@@ -39,7 +39,7 @@ rules:
   label: ModificationTrigger
   priority: 1
   type: token
-  action: mkBioMention
+  action: default
   pattern: |
     (?<= [mention="BioChemicalEntity"] [word=/^that|which$/] [lemma="be"]) [!lemma=/^(un|non)/ & lemma=/${modTriggerWords}/ & !outgoing=/prep_by|agent/ & tag=/^(JJ|VBN)/] (?! [lemma="by"] @BioChemicalEntity)
 
@@ -52,7 +52,7 @@ rules:
 # Phosphorylated p53 on serine-15
 - name: PTMmodification_1
   label: PTM
-  action: storePTM
+  action: default
   priority: 2
   type: token
   pattern: |
@@ -61,7 +61,7 @@ rules:
 # Tyrosine-phosphorylated ASPP1
 - name: PTMmodification_2
   label: PTM
-  action: storePTM
+  action: default
   priority: 2
   type: token
   pattern: |
@@ -70,7 +70,7 @@ rules:
 # WTX (that|which) is phosphorylated at serine 286
 - name: PTMmodification_3b
   label: PTM
-  action: storePTM
+  action: default
   priority: 2
   type: token
   pattern: |
@@ -81,7 +81,7 @@ rules:
 
 - name: eventsite_1
   label: EventSite
-  action: storeEventSite
+  action: default
   priority: 2
   type: token
   pattern: |
@@ -91,7 +91,7 @@ rules:
 # should create EGFR(Mods = EventSite(JM domains)), HER2(Mods = EventSite(JM domains))
 - name: eventsite_multisite_1
   label: EventSite
-  action: storeEventSite
+  action: default
   priority: 2
   type: token
   pattern: |
@@ -111,7 +111,7 @@ rules:
 # this grabs all sites that it finds within (optional) parens
 - name: eventsite_with_optional_parens
   label: EventSite
-  action: storeEventSite
+  action: default
   priority: 2
   example: "ERK(T202/Y204)"
   type: token

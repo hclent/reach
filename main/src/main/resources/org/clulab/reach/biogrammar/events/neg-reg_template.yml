@@ -7,7 +7,7 @@
   priority: ${ priority }
   example: "X inhibits Y"
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [word=/(?i)^(${ triggers })/ & tag=/^V|RB/] [lemma=/^(${ auxtriggers })/ & tag=/^V/]?
     controlled:${ controlledType } = prepc_by? (dobj | xcomp | ccomp) /conj|dep|dobj|cc|nn|amod|prep_of|prep_in$/{,2} (>> [word=by]){,2}
@@ -19,7 +19,7 @@
   priority: ${ priority }
   example: "X is inhibited by Y"
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [word=/(?i)^(${ triggers })/ & tag=/VBD|VBN|RB/] [lemma=/^(${ auxtriggers })/ & tag=/^V/]?
     controlled:${ controlledType } = (>nsubjpass|<vmod) /conj_|nn|amod|cc/{,2}
@@ -30,7 +30,7 @@
   priority: ${ priority }
   example: ""
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [word=/(?i)^(${ triggers })/ & !outgoing=nsubjpass & tag=/^V|RB/] [lemma=/^(${ auxtriggers })/ & tag=/^V/]?
     controlled:${ controlledType } = ( (/pobj|prep_[^b]|conj_|nn|amod/{1,2}) | (< /pobj|prep_|conj_|nn|amod/{1,2}) )
@@ -41,7 +41,7 @@
   priority: ${ priority }
   example: ""
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [word=/(?i)^(${ triggers })/ & tag=/^V|RB/] [lemma=/^(${ auxtriggers })/ & tag=/^V/]?
     controlled:${ controlledType } = (nsubjpass /conj_|nn|amod/{,2})
@@ -52,7 +52,7 @@
   priority: ${ priority }
   example: ""
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [word=/(?i)^(${ triggers })/ & tag=/^V|RB/] [lemma=/^(${ auxtriggers })/ & tag=/^V/]?
     controlled:${ controlledType } = dobj /nn|amod|conj_|cc/{,2}
@@ -63,7 +63,7 @@
   priority: ${ priority }
   example: ""
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [word=/(?i)^(${ triggers })/ & tag=/VBN|RB/] [lemma=/^(${ auxtriggers })/ & tag=/^VBN/]?
     controlled:${ controlledType } = (< /xcomp|rcmod|appos/){1,2} /appos|nn|amod|conj_|cc/{,2}
@@ -73,7 +73,7 @@
   priority: ${ priority }
   example: "Cells were additionally inhibited with 10 ng/ml leptin and cell extracts analyzed for ErbB3 tyrosine phosphorylation."
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [word=/(?i)^(${ triggers })/ & tag=VBN] # passive verb
     controlled:${ controlledType } = prep_with vmod prep_for
@@ -83,7 +83,7 @@
   priority: ${ priority }
   example: ""
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [word=/(?i)^(${ triggers })/ & tag=/^N/] [lemma=/^(${ auxtriggers })/]?
     controlled:${ controlledType } = /prep_of|prep_in$/ /nn|amod|conj_|cc/{,2}
@@ -94,7 +94,7 @@
   priority: ${ priority }
   example: ""
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [word=/(?i)^(${ triggers })/ & tag=/^N/] [lemma=/^(${ auxtriggers })/ & tag=/^N/]?
     controlled:${ controlledType } = /prep_of|prep_in$/? /conj_|cc|nn|amod/{1,2}
@@ -105,7 +105,7 @@
   priority: ${ priority }
   example: "rapamycin inhibition of the phosphorylation of ERK"
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [word=/(?i)^(${ triggers })/ & tag=/^N/ & !outgoing=prep_by] [lemma=/^(${ auxtriggers })/ & tag=/^N/]?
     controlled:${ controlledType } = /prep_of/ /conj_|cc|nn|amod/{,2}
@@ -115,7 +115,7 @@
   priority: ${ priority }
   example: ""
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [word=/(?i)^(${ triggers })/ & tag=/^N/] [lemma=/^(${ auxtriggers })/ & tag=/^N/]?
     controlled:${ controlledType } = < /nn|amod/ > /prep_/ /conj_|cc|nn|amod/{,2}
@@ -126,7 +126,7 @@
   priority: ${ priority }
   example: ""
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [word=/(?i)^(${ triggers })/ & tag=/^N/] [lemma=/^(${ auxtriggers })/ & tag=/^N/]?
     controller:${ controllerType } = <prep_via (agent|prep_by) /nn|amod|conj_|cc/{,2}
@@ -137,7 +137,7 @@
   priority: ${ priority }
   example: "Rapamycin, an inhibitor of the mTOR kinase,"
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [word=/(?i)^(${ triggers })/ & tag=/^N/] [lemma=/^(${ auxtriggers })/ & tag=/^N/]?
     controller:${ controllerType } = <dep /nn|amod|conj_|cc/{,2}
@@ -149,7 +149,7 @@
   priority: ${ priority }
   example: "HDAC inhibitors including trichostatin A"
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [word=/(?i)^(${ triggers })/ & tag=/^N/] [lemma=/^(${ auxtriggers })/ & tag=/^N/]?
     controlled:${ controlledType } = /conj_|cc|nn|amod/{,2}
@@ -161,7 +161,7 @@
   example: "mTOR inhibitor Rapamycin"
   type: token
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     @controlled:${ controlledType } (?<trigger> [word=/(?i)^(${ triggers })/ & tag=/^NN/]) @controller:${ controllerType }
 
@@ -172,7 +172,7 @@
   example: "Inhibition of mTOR by rapamycin has been standard treatment "
   type: token
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     (?<trigger> [word=/(?i)^(${ triggers })/ & tag=/^NN/]) of @controlled:${ controlledType } by @controller:${ controllerType } (?! [lemma=/${ triggers }/ & tag=/^NN/])
 
@@ -181,7 +181,7 @@
   priority: ${ priority }
   example: "A is an inhibitor of B"
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [lemma=/be/ & tag=/^V/] []? []? [lemma=/${ triggers }/ & tag=/^N/]
     controller:${ controllerType } = nsubj
@@ -192,7 +192,7 @@
   priority: ${ priority }
   example: "ASPP1 is common, as is its inhibition by ASPP2."
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [lemma=/${ triggers }/ & tag=/^N/]
     controller:${ controllerType } = /prep_by|agent/
@@ -206,7 +206,7 @@
   type: token
   example: "Cells were additionally inhibited with 10 ng/ml leptin and cell extracts analyzed for ErbB3 tyrosine phosphorylation."
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     # passive verb ("inhibited" in the example)
     (?<trigger> [word=/(?i)^(${ triggers })/ & tag=VBN])

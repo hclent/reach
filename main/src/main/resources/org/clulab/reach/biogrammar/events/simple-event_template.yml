@@ -16,7 +16,7 @@
   priority: ${ priority }
   example: "We further showed, in a combined enzymatic assay, that human deoxycytidine kinase and UMP-CMP kinase together ${ verbalTriggerLemma }d araC, dFdC, and 2',3'-dideoxycytidine to their diphosphate forms."
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [lemma=/${ verbalTriggerLemma }/ & ${triggerPrefix} & tag=/^(V|JJ)/ & !mention=ModificationTrigger]
     cause:BioChemicalEntity? = <xcomp? (nsubj | agent | <vmod) /appos|nn|conj_(and|or|nor)|cc/{,2}
@@ -28,7 +28,7 @@
   priority: ${ priority }
   example: "Akt ${ verbalTriggerLemma }s Ser487 on AMPK-alpha1"
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [lemma=/${ verbalTriggerLemma }/ & ${triggerPrefix} & tag=/^(V|JJ)/ & !mention=ModificationTrigger]
     cause:BioChemicalEntity? = <xcomp? (nsubj | agent | <vmod) /appos|nn|conj_(and|or|nor)|cc/{,2}
@@ -40,7 +40,7 @@
   priority: ${ priority }
   example: "Human deoxycytidine kinase is ${ verbalTriggerLemma }d by ASPP2 on serine 128. The BRCT1 domain of XRCC1 is ${ verbalTriggerLemma }d in vitro by DNA-PK. ... reveals that XRCC1 is ${ verbalTriggerLemma }d by the co-immunoprecipitated DNA-PK"
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [lemma=/${ verbalTriggerLemma }/ & ${triggerPrefix} & tag=/^(V|JJ)/ & !mention=ModificationTrigger]
     cause:BioChemicalEntity? = (agent|prep_by) (vmod dobj)? /conj_(and|or|nor)|nn|cc|prep_of/{,2}
@@ -52,7 +52,7 @@
   priority: ${ priority }
   example: "Human deoxycytidine kinase is ${ verbalTriggerLemma }d by ASPP2 on serine 128. The BRCT1 domain of XRCC1 is ${ verbalTriggerLemma }d in vitro by DNA-PK. ... reveals that XRCC1 is ${ verbalTriggerLemma }d by the co-immunoprecipitated DNA-PK"
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [lemma=/${ verbalTriggerLemma }/ & ${triggerPrefix} & tag=/^(V|JJ)/ & !mention=ModificationTrigger]
     cause:BioChemicalEntity = (agent|prep_by) (vmod dobj)? /conj_(and|or|nor)|nn|cc|prep_of/{,2}
@@ -64,7 +64,7 @@
   priority: ${ priority }
   example: ""
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [lemma=/${ verbalTriggerLemma }/ & ${triggerPrefix} & !outgoing=nsubjpass & tag=/^(V|JJ)/ & !mention=ModificationTrigger] # verbal predicate
     cause:BioChemicalEntity? = <nn{,2}
@@ -76,7 +76,7 @@
   priority: ${ priority }
   example: ""
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [lemma=/${ verbalTriggerLemma }/ & ${triggerPrefix} & !outgoing=nsubjpass & tag=/^(V|JJ)/ & !mention=ModificationTrigger] # verbal predicate
     cause:BioChemicalEntity? = (prep_by) /nn|conj_(and|or|nor)|cc|prep_of/{,2}
@@ -88,7 +88,7 @@
   priority: ${ priority }
   example: ""
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [lemma=/${ verbalTriggerLemma }/ & ${triggerPrefix} & !outgoing=nsubjpass & tag=/^(V|JJ)/ & !mention=ModificationTrigger] # verbal predicate
     cause:BioChemicalEntity? = <nn{,2}
@@ -100,7 +100,7 @@
   priority: ${ priority }
   example: ""
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [lemma=/${ verbalTriggerLemma }/ & ${triggerPrefix} & !outgoing=nsubjpass & tag=/^(V|JJ)/ & !mention=ModificationTrigger] # verbal predicate
     cause:BioChemicalEntity? = (prep_by) /nn|conj_(and|or|nor)|cc|prep_of/{,2}
@@ -112,7 +112,7 @@
   priority: ${ priority }
   example: "Hence ASPP2 can be ${ verbalTriggerLemma }d at serine 827 by MAPK1 in vitro."
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [lemma=/${ verbalTriggerLemma }/ & ${triggerPrefix} & tag=/^(V|JJ)/ & !mention=ModificationTrigger]
     cause:BioChemicalEntity? = (/prep_/ /conj_(and|or|nor)|nn/{,2})? /prep_/{,2} /prep_by|agent/ /conj_(and|or|nor)|nn|prep_of/{,2}
@@ -124,7 +124,7 @@
   priority: ${ priority }
   example: "IKK contains two catalytic subunits, IKKalpha and IKKbeta, both of which are able to correctly ${ verbalTriggerLemma } IkappaB.  Its many abnormal phenotypes can be rescued via overexpressing Ras, an XXX that specifically ${ verbalTriggerLemma }s ASPP2."
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [lemma=/${ verbalTriggerLemma }/ & ${triggerPrefix} & tag=/^(V|JJ)/ & !mention=ModificationTrigger]
     cause:BioChemicalEntity = (< /xcomp|rcmod|appos/){1,2} /appos|nn|conj_(and|or|nor)|cc/{,2}
@@ -136,7 +136,7 @@
   priority: ${ priority }
   example: "We measured transcription activation in the presence of ASPP2, which is phosphorylated by Ras."
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [lemma=/${ verbalTriggerLemma }/ & ${triggerPrefix} & tag=/^(VBN|JJ)/ & !mention=ModificationTrigger]
     cause:BioChemicalEntity? = /prep_by|agent/ /appos|nn|conj_(and|or|nor)|cc/{,2}
@@ -148,7 +148,7 @@
   priority: ${ priority }
   example: "We found that endogenous K-Ras and H-Ras underwent mono-ubiquitination in HEK293T cells."
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [word=/(?i)underwent/ & tag=/VB/ & !mention=ModificationTrigger] [lemma=/${ nominalTriggerLemma }/ & ${triggerPrefix}]
     cause:BioChemicalEntity? = /prep_by|agent/ /appos|nn|conj_(and|or|nor)|cc/{,2}
@@ -161,7 +161,7 @@
   priority: ${ priority }
   example: "EGF is tyrosine ${ verbalTriggerLemma }ed."
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [lemma=/${ verbalTriggerLemma}/ & word=/ed$/]
     theme:BioChemicalEntity = <amod nsubj /appos|nn|conj_(and|or|nor)|cc/{,2}
@@ -172,7 +172,7 @@
   priority: ${ priority }
   example: "EGF is tyrosine ${ verbalTriggerLemma }ed."
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [lemma=/${ verbalTriggerLemma}/ & word=/ed$/]
     theme:BioChemicalEntity = /nsubj|nsubjpass/ /appos|nn|conj_(and|or|nor)|cc/{,2} # the parser incorrectly assigns nsubj here...
@@ -183,7 +183,7 @@
   priority: ${ priority }
   example: "... which includes ${ nominalTriggerLemma } of PKC isozymes by phosphoinositide-dependent protein kinases.  Ras ${ nominalTriggerLemma } of ASPP2 increased."
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [lemma=/${ nominalTriggerLemma }/ & ${triggerPrefix}]
     cause:BioChemicalEntity? = ((<dobj | <pobj)? (prep_by|agent) | nn | prep_of prep_by) /nn|conj_(and|or|nor)|cc/{,2} | poss
@@ -195,7 +195,7 @@
   priority: ${ priority }
   example: "... which includes ${ nominalTriggerLemma } of PKC isozymes by phosphoinositide-dependent protein kinases.  Ras ${ nominalTriggerLemma } of ASPP2 increased."
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [lemma=/${ nominalTriggerLemma }/ & ${triggerPrefix}]
     cause:BioChemicalEntity? = ((<dobj | <pobj)? (prep_by|agent) | nn | /^prep_o[nf]$/{1,2} prep_by) /nn|conj_(and|or|nor)|cc/{,2} | poss
@@ -207,7 +207,7 @@
   priority: ${ priority }
   example: "Overexpressed PRAS40 suppressed the ${ nominalTriggerLemma } of S6K1 and 4E-BP1 at their rapamycin-sensitive ${ nominalTriggerLemma } sites, and reciprocally, overexpression of S6K1 or 4E-BP1 suppressed ${ nominalTriggerLemma } of PRAS40 (Ser(183)) and its binding to raptor."
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [lemma=/${ nominalTriggerLemma }/ & ${triggerPrefix}] # nominal predicate
     cause:BioChemicalEntity = /prep_by|agent/ /conj_(and|or|nor)|cc|nn/{,2}
@@ -219,7 +219,7 @@
   priority: ${ priority }
   example: "ERK- mediated serine ${ nominalTriggerLemma } of the GAB1 adaptor has been shown to ..."
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [lemma=/${ nominalTriggerLemma }/ & ${triggerPrefix} & !outgoing=prep_by] # nominal predicate
     cause:BioChemicalEntity = /conj_(and|or|nor)|cc|nn/{1,2}
@@ -232,7 +232,7 @@
   priority: ${ priority }
   example: " ... mediated by inter-Rad53 ${ nominalTriggerLemma }.  ASPP1 and ASPP2 have two conserved putative MAPK2 ${ nominalTriggerLemma } sites in their C-terminus."
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [lemma=/${ nominalTriggerLemma }/ & ${triggerPrefix} & !outgoing=/prep_(by|of)/]
     theme:BioChemicalEntity = </conj_(and|or|nor)/? /conj_(and|or|nor)|cc|nn|prep_of/{,2}
@@ -243,7 +243,7 @@
   priority: ${ priority }
   example: "Interestingly, we observed two conserved putative MAPK ${ nominalTriggerLemma } sites in ASPP1 and ASPP2."
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [lemma=/${ nominalTriggerLemma }/ & ${triggerPrefix}]
     cause:BioChemicalEntity? = < nn /conj_(and|or|nor)|cc|nn/{,2}
@@ -254,7 +254,7 @@
   priority: ${ priority }
   example: "... the transcriptional cofactor beta-catenin is destabilized via ${ nominalTriggerLemma } of ASPP1 by protein kinase GSK3beta in complex with Axin family members"
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [lemma=/${ nominalTriggerLemma }/ & ${triggerPrefix}]
     cause:BioChemicalEntity = <prep_via? (agent|prep_by) /nn|conj_(and|or|nor)|cc/{,2}
@@ -266,7 +266,7 @@
   priority: ${ priority }
   example: ""
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [lemma=/${ nominalTriggerLemma }/ & ${triggerPrefix} & !outgoing=prep_of]
     theme:BioChemicalEntity = < nsubj dobj prep_of appos? /nn|cc|conj/{,2}
@@ -276,7 +276,7 @@
   priority: ${ priority }
   example: "RAS plays no role in the ${ nominalTriggerLemma } of Mek."
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [lemma=/${ nominalTriggerLemma }/ & ${triggerPrefix}]
     cause:BioChemicalEntity = <prep_in <dobj? nsubj /nn|cc|conj/{,2}
@@ -293,7 +293,7 @@
   example: " ... which blocks an inhibitory threonine ${ nominalTriggerLemma } on the JM domains of EGFR and HER2"
   type: token
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     (?<trigger> [lemma=/${ nominalTriggerLemma }/ & ${triggerPrefix}]) /of/ [!tag=/^(V|JJ)/]{,2}? @theme:BioChemicalEntity (/^(on|at)$/ @site:Site)?
 
@@ -304,7 +304,7 @@
   example: " ... which blocks an inhibitory threonine ${ nominalTriggerLemma } on the JM domains of EGFR and HER2"
   type: token
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     (?<trigger> [lemma=/${ nominalTriggerLemma }/ & ${triggerPrefix}]) /of/ [!tag=/^(V|JJ)/]{,2}? @BioChemicalEntity [tag="CC"] @theme:BioChemicalEntity
 
@@ -314,7 +314,7 @@
   example: " ... , thereby increasing ERBB3 ${ nominalTriggerLemma }."
   type: token
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     @theme:BioChemicalEntity (?<trigger> [lemma=/${ nominalTriggerLemma }/ & ${triggerPrefix}]) (/^(on|at)$/ @site:Site)? (?! [lemma=of|lemma=site])
 
@@ -325,7 +325,7 @@
   example: "Experiments revealed ${ nominalTriggerLemma } at Lys residues 104 and 147 of K-Ras."
   type: token
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     (?<trigger> [lemma=/${ nominalTriggerLemma }/ & ${triggerPrefix}]) [!tag=/^(V|JJ)/]{,2}? "at" []{1,10} @site:Site [word=/^(of|for)/] @theme:BioChemicalEntity
 
@@ -336,7 +336,7 @@
   example: "We hypothesized that MEK inhibition activates AKT by inhibiting ERK activity, which blocks an inhibitory threonine ${ nominalTriggerLemma } on the JM domains of EGFR and HER2, thereby increasing ERBB3 phosphorylation."
   type: token
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     (?<trigger> [lemma=/${ nominalTriggerLemma }/ & ${triggerPrefix}]) on [!tag=/^(V|JJ)/]{,2}? @site:Site []{,2}? of []{,2}? @theme:BioChemicalEntity
 
@@ -346,7 +346,7 @@
   example: "We hypothesized that MEK inhibition activates AKT by inhibiting ERK activity, which blocks an inhibitory threonine ${ nominalTriggerLemma } on the JM domains of EGFR and HER2, thereby increasing ERBB3 phosphorylation."
   type: token
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     (?<trigger> [lemma=/${ nominalTriggerLemma }/ & ${triggerPrefix}]) on [!tag=/^(V|JJ)/]{,2}? @site:Site []{,2}? of []{,2}? and @theme:BioChemicalEntity
 
@@ -356,7 +356,7 @@
   example: "The effects of ${ nominalTriggerLemma } on Ras are not isoform-specific."
   type: token
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     (?<trigger> [lemma="effect"] of [lemma=/${ nominalTriggerLemma }/ & ${triggerPrefix}]) on @theme:BioChemicalEntity (at [!tag=/^(V|JJ)/]{1,2} @site:Site)?
 
@@ -366,7 +366,7 @@
   example: "ERK(K156/H204) ${ nominalTriggerLemma } (Fig. 2)."
   type: token
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     @theme:BioChemicalEntity "(" [!tag=/^V/]{,4}? @site:Site? ([tag=/^,|CC/] @site:Site)* ")" (?<trigger>[lemma=/${ nominalTriggerLemma }/ & ${triggerPrefix}]) (?! "of" @BioChemicalEntity)
 
@@ -377,7 +377,7 @@
   example: "ERK(K156M/H204M) ${ nominalTriggerLemma } (Fig. 2)."
   type: token
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     @theme:BioChemicalEntity "(" [!tag=/^V/]{,4} @site:Site? ")" (?<trigger>[lemma=/${ nominalTriggerLemma }/ & ${triggerPrefix}]) (?! "of" @BioChemicalEntity)
 
@@ -387,7 +387,7 @@
 #  example: "$There was evidence for EGFR and ERBB3 tyrosine { nominalTriggerLemma }."
 #  type: token
 #  label: ${ label }
-#  action: ${ actionFlow }
+#  action: default
 #  pattern: |
 #    (?<theme> [mention="BioChemicalEntity" & !incoming=/prep_of|dobj/])
 #    ("," @BioChemicalEntity)*
@@ -403,7 +403,7 @@
   example: "Under the same conditions, ASPP2 (693-1128) fragment ${ verbalTriggerLemma }d by p38 SAPK had very low levels of incorporated 32P."
   type: token
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     @theme:BioChemicalEntity (?<trigger> [lemma=/${ verbalTriggerLemma }/ & ${triggerPrefix} & tag="VBN" & !mention=ModificationTrigger]) (by @cause:BioChemicalEntity)? (/^(on|at)$/ @site:Site)? (?! [tag="DT" | mention="BioEntity"])
 
@@ -413,7 +413,7 @@
   example: ""
   type: token
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     (?<trigger> [lemma=/${ verbalTriggerLemma }/ & ${triggerPrefix} & tag=/^(V|JJ)/ & !mention=ModificationTrigger])
     @theme:BioChemicalEntity
@@ -427,7 +427,7 @@
   example: "JAK3 ${ verbalTriggerLemma }s three HuR residues (Y63, Y68, Y200)"
   type: token
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     (@cause:BioChemicalEntity)? (?<trigger> [lemma=/${ verbalTriggerLemma }/ & ${triggerPrefix} & tag=/^(V|JJ)/ & !mention=ModificationTrigger]) [!tag=/^(V|JJ)/ & !word=by]{,2}? @theme:BioChemicalEntity protein? at (@site:Site ("," | and | as well as){,2})* @site:Site
 
@@ -438,7 +438,7 @@
   example: "the ability of the exogenous ErbB3 receptor to be tyrosine phosphorylated in response to stimulation with either EGF or neuregulin (NRG)"
   type: token
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     (/(?i)^the$/ ability of the?)? [tag=JJ | word=mutant | mention=Mutant]{,2} @theme:BioChemicalEntity /proteins?/?
     to (become | be) @site:Site? (?<trigger> "${ verbalTriggerLemma }d")

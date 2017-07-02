@@ -7,7 +7,7 @@
 - name: dehydrolysis_1
   label: Dehydrolysis
   priority: ${ priority }
-  action: mkBioMention
+  action: default
   example: "We compared the rate of GTP dehydrolysis for Ras and mUbRas in the presence of the catalytic domains of two GAPs."
   pattern: |
     trigger = [word=/(?i)de-?hydrolysis/]
@@ -18,7 +18,7 @@
 - name: dehydrolysis_2
   label: Dehydrolysis
   priority: ${ priority }
-  action: mkBioMention
+  action: default
   example: "Here we show that monoubiquitination decreases the sensitivity of Ras to GAP-mediated dehydrolysis"
   pattern: |
     trigger = [word=/(?i)de-?hydrolysis/]
@@ -28,7 +28,7 @@
 - name: dehydrolysis_2wrong
   label: Dehydrolysis
   priority: ${ priority }
-  action: mkBioMention
+  action: default
   example: "Here we show that monoubiquitination decreases the sensitivity of Ras to GAP-mediated dehydrolysis"
   pattern: |
     trigger = [word=/(?i)de-?hydrolysis/]
@@ -39,7 +39,7 @@
 - name: dehydrolysis_3
   label: Dehydrolysis
   priority: ${ priority }
-  action: mkBioMention
+  action: default
   example: "No increase in the rate of GTP dehydrolysis was observed for mUbRas"
   pattern: |
     trigger = [word=/(?i)de-?hydrolysis/]
@@ -49,7 +49,7 @@
 - name: dehydrolysis_4
   label: Dehydrolysis
   priority: ${ priority }
-  action: mkBioMention
+  action: default
   example: "RasPDZ2UL retains intrinsic GTP dehydrolysis activity"
   pattern: |
     trigger = [word=/(?i)de-?hydrolysis/]
@@ -59,7 +59,7 @@
 - name: dehydrolysis_token_1
   label: Dehydrolysis
   priority: ${ priority }
-  action: mkBioMention
+  action: default
   example: "We measured the rate of GAP-mediated GTP dehydrolysis"
   type: token
   pattern: |
@@ -69,7 +69,7 @@
 - name: dehydrolysis_token_2
   label: Dehydrolysis
   priority: ${ priority }
-  action: mkBioMention
+  action: default
   example: "Renin is an enzyme that dehydrolyzes Ras-GTP."
   type: token
   pattern: |
@@ -79,7 +79,7 @@
 - name: dehydrolysis_decl1
   label: Dehydrolysis
   priority: ${ priority }
-  action: mkBioMention
+  action: default
   example: "RasGAP dehydrolyzes GTP to GDP"
   pattern: |
     trigger = [word=/(?i)^de-?hydrolyz/ & tag=/^VB[^N]?/]
@@ -89,7 +89,7 @@
 - name: dehydrolysis_pass1
   label: Dehydrolysis
   priority: ${ priority }
-  action: mkBioMention
+  action: default
   example: "Ras-GDP is dehydrolyzed by 26S proteasome without ubiquitination"
   pattern: |
     trigger = [word=/(?i)^de-?hydrolyz/ & tag=VBN]
@@ -99,7 +99,7 @@
 - name: dehydrolysis_subjnom1
   label: Dehydrolysis
   priority: ${ priority }
-  action: mkBioMention
+  action: default
   example: "MEK dehydrolysis of Ras-GDP increased."
   pattern: |
     trigger = [word=/(?i)^de-?hydrolysis/]

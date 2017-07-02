@@ -7,7 +7,7 @@
   priority: ${ priority }
   label: ${ label }
   example: "Cells rescued with wild type Gab1 exhibit Gab1 tyrosine phosphorylation in response to EGF treatment"
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = in response to
     controlled:SimpleEvent = <prep_in dobj?
@@ -19,7 +19,7 @@
   type: token
   example: "The phosphorylation of AKT1 following MEK activation."
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     @controlled:SimpleEvent following @controller:${ controllerType } (?<trigger> [word=/(?i)^(${ triggers })/ & tag=/^NN/])
 
@@ -30,7 +30,7 @@
   type: token
   example: "The phosphorylation of AKT1 following activation of MEK."
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     @controlled:SimpleEvent following (?<trigger> [word=/(?i)^(${ triggers })/ & tag=/^NN/]) [word=/of|by/] @controller:${ controllerType }
 
@@ -42,7 +42,7 @@
   priority: ${ priority }
   example: "The phosphorylation of AKT1 following MEK activation."
   label: ${ label }
-  action: ${ actionFlow }
+  action: default
   pattern: |
     trigger = [word=/(?i)^(${ triggers })/ & tag=/^N/] [lemma=/^(${ auxtriggers })/ & tag=/^N/]?
     controller:BioEntity = /nn|prep_of|prep_by/
